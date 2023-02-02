@@ -1,0 +1,38 @@
+﻿<Page x:Class="ReportApp.View.Windows.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ReportApp.View.Windows" xmlns:charts="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+       
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Пользователь" Width="125" Margin="5" VerticalAlignment="Center" TextAlignment="Right"></TextBlock>
+                <ComboBox x:Name="ComboUsers" SelectionChanged="ComboUsers_SelectionChanged" Width="175" Margin="5" DisplayMemberPath="last_name"></ComboBox>
+                <TextBlock Text="Тип диограммы" Width="125" Margin="5" VerticalAlignment="Center" TextAlignment="Right"></TextBlock>
+                <ComboBox  x:Name="ComboChartTypes" SelectionChanged="ComboUsers_SelectionChanged"  Width="175" Margin="5"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button  Height="25" Width="175" Margin="0 0 5 0 " Content="Экспорт в эксель" Click="Report_Click" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <WindowsFormsHost  Margin="5">
+                <charts:Chart x:Name="ChartPayments">
+                    <charts:Chart.Legends>
+                        
+                    </charts:Chart.Legends>
+                </charts:Chart>
+            </WindowsFormsHost>
+        </StackPanel>
+    </Grid>
+</Page>

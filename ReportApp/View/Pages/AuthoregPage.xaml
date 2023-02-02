@@ -1,0 +1,27 @@
+﻿<Page x:Class="ReportApp.View.Pages.AuthoregPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ReportApp.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="200" d:DesignWidth="250"
+      Title="AuthoregPage">
+
+    <Grid Background="WhiteSmoke">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <UniformGrid>
+                <TextBlock  HorizontalAlignment="Right" Width="110"  >Имя Пользователя</TextBlock>
+                <ComboBox x:Name="LoginComboBox" Height="30" Width="70"></ComboBox>
+            </UniformGrid>
+            <UniformGrid>
+                <TextBlock Width="110" RenderTransformOrigin="0.03,0.562" ><Run Text="Пароль"/></TextBlock>
+                <PasswordBox x:Name="PasswordBox" Height="25" Width="70" TabIndex="1" />
+                </UniformGrid>
+            <UniformGrid>
+                <Button x:Name="SignInbutton" TabIndex="2" Click="SignInbuttonClick"  Height="30" Width="70"   Content="Войти"></Button>
+                <Button x:Name="ExitButton" TabIndex="3" Click="ExitButtonClick" IsTabStop="True" Height="30" Width="70"  Content="Выход" ></Button>
+            </UniformGrid>
+        </StackPanel>
+    </Grid>
+</Page>
